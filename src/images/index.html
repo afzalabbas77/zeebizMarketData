@@ -1,0 +1,1554 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
+    <title>Zee News</title>
+    <!-- CUSTOM CSS START HERE -->
+    <style>
+      *{box-sizing:border-box}
+      body,p,h1,h2,h3,h4,h5,h6,ul,li,form,section{margin: 0;padding: 0;font-weight: normal;font-family: 'Mukta', sans-serif;}
+      a, a:hover{text-decoration: none;}
+      .container{max-width: 1340px; margin-left: auto; margin-right:auto;padding: 0 20px;}
+      li{list-style-type: none;}
+      .img-res{max-width:100%;height:auto;display:block;}
+      .navbarcon,.langdwn,.weatherbox,.lanbar,.weather, .socialicon ul,.navbarcon li,.navbarcon li a, .navbarright, .navbar > .container, .breakingnewsbox > .container, .subnavbarul, .tpstrytitile, .topstoryminled, .lead-tagbox, .leadstoryminled{display: flex; align-items: center; justify-content: space-between;}
+      .lanbarbox{background: #2c2d31;}
+      .lanbar{height: 30px; color:#fff;}
+      .langdwn, .weatherbox{font-size: 12px; padding: 9px 0;flex: 0 0 40%;}
+      .lanbar a{color:#ACA3A3}
+      .active-lang{color:#fff !important;}
+      .weatherbox li{border-right: 1px solid #666666;padding-right: 10px;}
+      .weatherbox a{color:#fff}
+      .weather{margin-left: 15px;}
+      .weather img{width: 20px; height: 20px;}
+      .weather h2{font-size: 10px;}
+      .weather span{color:#ffc200}
+      .parprice li{border-right:1px solid #fff; display: inline-block; padding:0 10px;}
+      .parprice li:last-child, .weatherbox li:last-child{border:0}
+      .socialicon ul{margin-top: 4px}
+      .socialicon li{padding: 0 5px; border: 0;}
+      .navbar{border-top:1px solid #d3d4de; border-bottom: 1px solid #d3d4de; background: #fff; box-shadow: 0 2px 8px 1px rgba(0,0,0,.1);}
+      .navbarcon{justify-content: left;}
+      .navbarcon li{border-right:1px solid #d3d4de; padding: 0 18px;height: 48px; font-size: 15px; color:#555d67;position: relative;}
+      .navbarcon li:nth-child(2)::after {background: none;}
+      .navbarcon li:nth-child(2){ padding-right: 0;}
+      .navbarcon li::after{content: ''; position: absolute; width: 5px; height: 5px; right: 8px;top:48%;background: url(images/navnewsgry.gif) no-repeat 0px 0px;}
+      .navbarcon li:first-child{ border-right: 0px;}
+      .navbarcon li:first-child:after{background-image: none;}
+      .navbarcon li a{font-weight: bold; color:#555d67 }
+      .navbarcon li:first-child{padding-left: 0;}
+      .navbarcon li:first-child img{ padding-right: 0px; }
+      .navbarcon li img{ padding-right: 10px;}
+      .navbarright li{padding: 0 5px;}
+      .topbanner{text-align: center; margin: auto;}
+      .topbanner img{margin: auto;}
+      .sectionmargin-btm{margin-bottom: 10px;}
+      .breakingnewsbox{background: #FF8000; color: #fff; padding: 5px 0; margin-bottom: 10px;}
+      .breakingnewsbox h2{font-size: 17px; border-right: 1px solid rgba(242, 242, 242,.48); padding-right: 10px;}
+      .breakingnewsbox p{flex: 0 0 80%; font-size: 14px;}
+      .subnavbar{border-bottom: 2px solid #dadbdf;}
+      .subnavbarul{margin-left: 150px; height: 25px;padding-bottom: 10px; }
+      .subnavbarul li a{font-size: 12px; font-weight: 600;}
+      .dotsmenu{font-size: 30px !important;font-weight: bold !important;line-height: 10px;}
+      .arrownews {border: solid #d3d4de;background:#fff;border-width: 0 3px 3px 0;display: inline-block;padding: 3px;transform: rotate(45deg); position: absolute; bottom: -6px;left: 50%;border-radius: 2px;}
+      .activenav{color:#FF8000 !important; font-weight: bold;}
+      .activenav::after{background: url(images/navnews.gif) no-repeat 0px 0px !important;}
+      .navbarcntr{color:#ff0606; font-size: 11px; text-transform: uppercase; font-weight: bold;}
+      .navbarcntr a{color:#ff0606}
+      .criccntry{border-top-left-radius: 4px;border-bottom-left-radius: 4px;padding: 0px 4px 0px 12px;font-size: 12px;background: #e5e5e5;color:#707070; margin-left:5px}
+      .criccntry1{border-top-right-radius: 4px;border-bottom-right-radius: 4px;padding: 0px 12px 0px 4px;font-size: 12px;background: #006fff;color:#fff; margin-right: 5px;}
+      .criccntry2{font-size: 12px; color: #393939; margin-right: 5px;}
+      .criccntry3{color:#808080;font-size: 10px;}
+      .navbarcntr sup{font-size: 15px;line-height: 10px;}
+      .leadbox .flex-col25{min-width: 320px; }
+      .navbarcon h1{display: inherit;}
+      /*hamburger menu*/
+      #menuToggle{display:block;-webkit-user-select:none;user-select:none;position:absolute;top: 15px;left: -5px;z-index: 1;}
+      #menuToggle a{text-decoration:none;color:#232323;transition:color .3s ease}
+      #menuToggle a:hover{color:#ff6347}
+      #menuToggle input{display:block;width:40px;height:32px;position:absolute;top:-7px;left:-5px;cursor:pointer;opacity:0;z-index:2;-webkit-touch-callout:none}
+      #menuToggle span{display:block;width:24px;height:3px;margin-bottom:5px;position:relative;background:#555d67;border-radius:2px;z-index:1;transform-origin:4px 0;transition:transform .5s cubic-bezier(0.77,0.2,0.05,1.0),background .5s cubic-bezier(0.77,0.2,0.05,1.0),opacity .55s ease}
+      #menuToggle span:first-child{transform-origin:0 0}
+      #menuToggle span:nth-last-child(3){width:19px }
+      #menuToggle span:nth-last-child(2){transform-origin:0 100%; }
+      #menuToggle input:checked ~ span{opacity:1;transform:rotate(45deg) translate(-2px,-1px);background:#232323}
+      #menuToggle input:checked ~ span:nth-last-child(3){opacity:0;transform:rotate(0deg) scale(0.2,0.2)}
+      #menuToggle input:checked ~ span:nth-last-child(2){transform:rotate(-45deg) translate(0,-1px)}
+      #menu{position:absolute;width:300px;margin:-100px 0 0 -50px;padding:50px;padding-top:125px;background:#ededed;list-style-type:none;-webkit-font-smoothing:antialiased;transform-origin:0 0;transform:translate(-500%,0);transition:transform .5s cubic-bezier(0.77,0.2,0.05,1.0)}
+      #menu li{padding:10px 0;font-size:22px}
+      #menuToggle input:checked ~ ul{transform:none}
+      /*lead area*/
+      section{margin-bottom: 30px;}
+      .topstorybox img{border-radius: 6px;}
+      .headingtop{color: #FF8000;font-weight: 700;font-size: 22px; line-height: normal;}
+      .headingtop a, .headingtitle a{color: #ff8000;}
+      .headingtitle{color: #ff8000; font-size: 12px;font-weight: bold; }
+      .tpstrytitile{height: 30px;}
+      .tpstrytitile span{color:#707070; font-size: 12px; }
+      .topstorydwn h3{color:#2C2D31; font-size: 20px; font-weight: bold; line-height: 28px;}
+      .topstoryminled, .leadstoryminled{border-bottom: 1px solid #E0E1E6; padding: 15px 0 20px 0;justify-content: flex-start; align-items: flex-start;}
+      .topstoryminled:last-child{border-bottom: 0}
+      .topstoryminled h3{font-size: 15px; font-weight: normal;}
+      .topstoryminled img{margin-right: 10px;border-radius: 4px;}
+      .topstoryminled .tpstrytitile{height: 20px;}
+      .width100percnt{width: 100%;}
+      .leadstoryminled{border-bottom: 0;padding: 10px 0 10px 0}
+      .subleadtitle{font-size: 20px !important; font-weight: bold !important;}
+      .leadstoryminled  img{margin-right: 10px;border-radius: 4px;}
+      .leadstoryminled .tpstrytitile{height: 20px;}
+      /* LEAD */
+      .lead{position:relative;min-height: 200px;}
+      .lead img{border-radius:6px;}
+      .lead-title-block{background:linear-gradient(to bottom,rgba(0,0,0,0) 0%,#000 100%);position:absolute;left:0;right:0;top:auto;min-height:60px;bottom:0;padding:10px 15px;color:#FFF;border-radius:10px;}
+      .lead-titlebox{text-shadow:0 1px 3px #000;color:#FFF;font-size:24px; line-height:36px;margin:10px 0 5px}
+      .lead-titlebox a{color:#FFF; display: block;}
+      .lead-tag{display:inline-block;font-size:12px;color:#FFF;margin-bottom:5px;text-transform:uppercase;font-weight:700;padding:2px 10px;background:#FF8000;border-radius:4px}
+      .lead-tag a{color:#FFF}
+      .BigNewsbx{position: absolute;top: 20px; left: 20px;font-size: 14px; font-weight: bold;background: #FFDD00; padding:3px 10px; border-radius: 8px;}
+      .lead-tagbox{justify-content: start;}
+      .lead-tagbox  h2{border-radius: 4px;background: #FF8000; padding: 4px 13px; font-size: 12px; color: #fff; margin-right: 15px;}
+      .lead-tagbox h2 a{color: #fff;}
+      .lead-tagbox span{font-size: 15px;}
+      /*top right banner area*/
+      .add300{margin-bottom: 10px; text-align: center; }
+      .add300 img{margin: auto;}
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="lanbarbox">
+        <div class="container">
+          <div class="lanbar">
+            <ul class="langdwn">
+              <li><a href="#" title="Hindi News" target="_balnk">हिन्दी</a></li>
+              <li><a href="#" title="Hindi News" target="_balnk">English</a></li>
+              <li><a href="#" title="Marathi News" target="_balnk">मराठी</a></li>
+              <li><a href="#" title="Bengali News" target="_balnk">বাংলা</a></li>
+              <li><a href="#" title="Tamil News" target="_balnk">தமிழ்</a></li>
+              <li><a href="" target="_blank" class="active-lang">മലയാളം</a></li>
+              <li><a href="#" target="_blank" title="Gujarati News">ગુજરાતી</a></li>
+              <li><a href="#" target="_blank" title="Telugu News">తెలుగు</a></li>
+              <li><a href="#" target="_blank" title="Kannada News">ಕನ್ನಡ</a></li>
+            </ul>
+            <ul class="weatherbox">
+              <li class="weather">
+                <img src="images/sunny.png">
+                <h2>Andhra Pradesh <span>20<sup>0</sup> C</span></h2>
+              </li>
+              <li class="parprice">
+                <ul>
+                  <li>Petrol price Rs.81.20</li>
+                  <li>Deisel price Rs. 79.12</li>
+                </ul>
+              </li>
+              <li><a href="#" title="">APP <img src="images/appdownload.png" alt=""></a></li>
+              <li class="socialicon">
+                <ul>
+                  <li><a href="#" title=""><img src="images/facebookicon.png" alt=""></a></li>
+                  <li><a href="#" title=""><img src="images/twittericon.png" alt=""></a></li>
+                  <li><a href="#" title=""><img src="images/youtubeicon.png" alt=""></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!--end of language-->
+        </div>
+      </div>
+      <!--end of language bar-->
+      <div class="navbar sectionmargin-btm">
+        <div class="container">
+          <ul class="navbarcon">
+            <li>
+              <nav role="navigation">
+                <div id="menuToggle">
+                  <input type="checkbox" />
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <ul id="menu">
+                    <a href="#">
+                      <li>Home</li>
+                    </a>
+                    <a href="#">
+                      <li>About</li>
+                    </a>
+                    <a href="#">
+                      <li>Info</li>
+                    </a>
+                    <a href="#">
+                      <li>Contact</li>
+                    </a>
+                    <a href="https://erikterwan.com/" target="_blank">
+                      <li>Show me more</li>
+                    </a>
+                  </ul>
+                </div>
+              </nav>
+            </li>
+            <li>
+              <a href="#" title="">
+                <h1><img src="images/zee-mallogo.png" alt="Malayalam news"></h1>
+              </a>
+            </li>
+            <li class="activenav"><img src="images/home.png" alt=""> News <i class="arrownews"></i></li>
+            <li><a href="#" title=""><img src="images/covid.png" alt="">Covid-19</a></li>
+            <li><a href="#" title=""><img src="images/videos.png" alt="">Watch</a></li>
+            <li><a href="#" title=""><img src="images/photos.png" alt="">Photos</a></li>
+            <li><a href="#" title=""><img src="images/states.png" alt="">States</a></li>
+          </ul>
+          <ul class="navbarcntr">
+            <li><a href="#" title="">Live<sup>▪</sup><span class="criccntry">Ind</span><span class="criccntry1">Aus</span><span class="criccntry2">152/2</span><span class="criccntry3">(35.2)</span></a></li>
+          </ul>
+          <ul class="navbarright">
+            <li><a href="#" title=""><img src="images/searchbolx.png" alt=""></a></li>
+            <li><a href="#" title=""><img src="images/mobicon.png" alt=""></a></li>
+            <li><a href="#" title=""><img src="images/notification.png" alt=""></a></li>
+            <li><a href="#" title=""><img src="images/userlogin.png" alt=""></a></li>
+          </ul>
+        </div>
+      </div>
+      <!--end of navbar-->
+      <div class="subnavbar sectionmargin-btm">
+        <div class="container">
+          <ul class="subnavbarul">
+            <li><a href="#" title="രാജ്യം">രാജ്യം</a></li>
+            <li><a href="#" title="സംസ്ഥാനം">സംസ്ഥാനം</a></li>
+            <li><a href="#" title="ലോകം">ലോകം</a></li>
+            <li><a href="#" title="വിനോദം">വിനോദം</a></li>
+            <li><a href="#" title="സാങ്കേതികവിദ്യ">സാങ്കേതികവിദ്യ</a></li>
+            <li><a href="#" title="ആരോഗ്യം">ആരോഗ്യം</a></li>
+            <li><a href="#" title="ബ്ലോഗ്">ബ്ലോഗ്</a></li>
+            <li><a href="#" title="കുറ്റകൃത്യം">കുറ്റകൃത്യം</a></li>
+            <li><a href="#" title="ക്രിക്കറ്റ്">ക്രിക്കറ്റ്</a></li>
+            <li><a href="#" title="..." class="dotsmenu">...</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--end of subnavbar-->
+    </header>
+    <div class="white_container">
+      <div class="topbanner sectionmargin-btm"><img src="images/bannr970X90.gif" alt="" class="img-res"></div>
+      <div class="breakingnewsbox">
+        <div class="container">
+          <h2>Breaking News</h2>
+          <p>India's total tally rises to 456183 with 14476 deaths, 258684 cured cases. Recovery rate 56.70%</p>
+          <img src="images/breakingbtn.gif" alt="">
+        </div>
+      </div>
+      <section class="leadbox container">
+        <div class="flex-row">
+          <div class="flex-col25">
+            <div class="topstorybox">
+              <h2 class="headingtop">Top Stories</h2>
+              <div class="topstorydwn">
+                <img src="images/topimg.jpg" class="img-res" alt="aa" >
+                <div class="tpstrytitile">
+                  <h2 class="headingtitle"><a href="#" title="">ഡൊണാൾഡ് ട്രംപ്</a></h2>
+                  <span>5 mis ago</span>
+                </div>
+                <h3><a href="#" title="">ചൈനയുമായുള്ള മുഖാമുഖം ലഡാക്ക് </a></h3>
+              </div>
+            </div>
+            <!--end of lead top stories-->
+            <div class="topstoryminled">
+              <img src="images/topminilead.jpg" class="img-res" alt="aa" >
+              <div class="width100percnt">
+                <div class="tpstrytitile">
+                  <h2 class="headingtitle"><a href="#" title="">വ്യാപനം</a></h2>
+                  <span>5 mis ago</span>
+                </div>
+                <h3><a href="#" title="">ഉപദേശവും ബോ</a></h3>
+              </div>
+            </div>
+            <div class="topstoryminled">
+              <img src="images/topminilead.jpg" class="img-res" alt="aa" >
+              <div class="width100percnt">
+                <div class="tpstrytitile">
+                  <h2 class="headingtitle"><a href="#" title="">ഡൊണാൾഡ് ട്രംപ്</a></h2>
+                  <span>5 mis ago</span>
+                </div>
+                <h3><a href="#" title="">ചൈനയുമായുള്ള മുഖാമുഖം ലഡാക്ക് </a></h3>
+              </div>
+            </div>
+            <div class="topstoryminled">
+              <img src="images/topminilead.jpg" class="img-res" alt="aa" >
+              <div class="width100percnt">
+                <div class="tpstrytitile">
+                  <h2 class="headingtitle"><a href="#" title="">ഡൊണാൾഡ് ട്രംപ്</a></h2>
+                  <span>5 mis ago</span>
+                </div>
+                <h3><a href="#" title="">ചൈനയുമായുള്ള മുഖാമുഖം ലഡാക്ക് </a></h3>
+              </div>
+            </div>
+            <div class="topstoryminled">
+              <img src="images/topminilead.jpg" class="img-res" alt="aa" >
+              <div class="width100percnt">
+                <div class="tpstrytitile">
+                  <h2 class="headingtitle"><a href="#" title="">ഡൊണാൾഡ് ട്രംപ്</a></h2>
+                  <span>5 mis ago</span>
+                </div>
+                <h3><a href="#" title="">ചൈനയുമായുള്ള മുഖാമുഖം ലഡാക്ക് </a></h3>
+              </div>
+            </div>
+            <div class="topstoryminled">
+              <img src="images/topminilead.jpg" class="img-res" alt="aa" >
+              <div class="width100percnt">
+                <div class="tpstrytitile">
+                  <h2 class="headingtitle"><a href="#" title="">ഡൊണാൾഡ് ട്രംപ്</a></h2>
+                  <span>5 mis ago</span>
+                </div>
+                <h3><a href="#" title="">ചൈനയുമായുള്ള മുഖാമുഖം ലഡാക്ക് </a></h3>
+              </div>
+            </div>
+            <div class="topstoryminled">
+              <img src="images/topminilead.jpg" class="img-res" alt="aa" >
+              <div class="width100percnt">
+                <div class="tpstrytitile">
+                  <h2 class="headingtitle"><a href="#" title="">ഡൊണാൾഡ് ട്രംപ്</a></h2>
+                  <span>5 mis ago</span>
+                </div>
+                <h3><a href="#" title="">ചൈനയുമായുള്ള മുഖാമുഖം ലഡാക്ക് </a></h3>
+              </div>
+            </div>
+            <div class="topstoryminled">
+              <img src="images/topminilead.jpg" class="img-res" alt="aa" >
+              <div class="width100percnt">
+                <div class="tpstrytitile">
+                  <h2 class="headingtitle"><a href="#" title="">ഡൊണാൾഡ് ട്രംപ്</a></h2>
+                  <span>5 mis ago</span>
+                </div>
+                <h3><a href="#" title="">ചൈനയുമായുള്ള മുഖാമുഖം ലഡാക്ക് </a></h3>
+              </div>
+            </div>
+          </div>
+          <!--end of top stories-->
+          <div class="flex-col50">
+            <div class="lead">
+              <a href="#">
+              <img src="images/big-img.webp" alt="" class="img-res">
+              </a>
+              <div class="BigNewsbx">Big News</div>
+              <div class="lead-title-block">
+                <div class="lead-tagbox">
+                  <h2><a href="https://zeenews.india.com/world" target="_blank">ലോകം</a></h2>
+                  <span>5 mis ago</span>
+                </div>
+                <h2 class="lead-titlebox"><a href="#">പ്രധാനമന്ത്രി മോദി ജൂൺ 26 ന് ‘ആത്മ നിർഭർ ഉത്തർപ്രദേശ് റോജർ അഭിയാൻ’ സമാരംഭിക്കും</a></h2>
+              </div>
+            </div>
+            <div class="leadstoryminled">
+              <img src="images/minileadcntr.jpg" class="img-res" alt="aa" >
+              <div class="width100percnt">
+                <div class="tpstrytitile">
+                  <h2 class="headingtitle"><a href="#" title="">വ്യാപനം</a></h2>
+                  <span>5 mis ago</span>
+                </div>
+                <h2 class="subleadtitle"><a href="#" title="">1 ഉപദേശവും ബോധവല്‍ക്ക രണവും നിര്‍ത്തി, പകരം കടുത്ത </a></h2>
+              </div>
+            </div>
+            <div class="leadstoryminled">
+              <img src="images/minileadcntr.jpg" class="img-res" alt="aa" >
+              <div class="width100percnt">
+                <div class="tpstrytitile">
+                  <h2 class="headingtitle"><a href="#" title="">വ്യാപനം</a></h2>
+                  <span>5 mis ago</span>
+                </div>
+                <h2 class="subleadtitle"><a href="#" title="">1 ഉപദേശവും ബോധവല്‍ക്ക രണവും നിര്‍ത്തി, പകരം കടുത്ത </a></h2>
+              </div>
+            </div>
+            <div class="leadstoryminled">
+              <img src="images/minileadcntr.jpg" class="img-res" alt="aa" >
+              <div class="width100percnt">
+                <div class="tpstrytitile">
+                  <h2 class="headingtitle"><a href="#" title="">വ്യാപനം</a></h2>
+                  <span>5 mis ago</span>
+                </div>
+                <h2 class="subleadtitle"><a href="#" title="">1 ഉപദേശവും ബോധവല്‍ക്ക രണവും നിര്‍ത്തി, പകരം കടുത്ത </a></h2>
+              </div>
+            </div>
+            <div class="leadstoryminled">
+              <img src="images/minileadcntr.jpg" class="img-res" alt="aa" >
+              <div class="width100percnt">
+                <div class="tpstrytitile">
+                  <h2 class="headingtitle"><a href="#" title="">വ്യാപനം</a></h2>
+                  <span>5 mis ago</span>
+                </div>
+                <h2 class="subleadtitle"><a href="#" title="">1 ഉപദേശവും ബോധവല്‍ക്ക രണവും നിര്‍ത്തി, പകരം കടുത്ത </a></h2>
+              </div>
+            </div>
+            <div class="leadstoryminled">
+              <img src="images/minileadcntr.jpg" class="img-res" alt="aa" >
+              <div class="width100percnt">
+                <div class="tpstrytitile">
+                  <h2 class="headingtitle"><a href="#" title="">വ്യാപനം</a></h2>
+                  <span>5 mis ago</span>
+                </div>
+                <h2 class="subleadtitle"><a href="#" title="">1 ഉപദേശവും ബോധവല്‍ക്ക രണവും നിര്‍ത്തി, പകരം കടുത്ത </a></h2>
+              </div>
+            </div>
+          </div>
+          <!--end of lead area-->
+          <div class="flex-col25">
+            <div class="add300"><img src="images/add300X250.jpg" alt=""></div>
+            <div class="topstorybox">
+              <h2 class="headingtop">India</h2>
+            </div>
+            <div class="indianews">
+              <div class="topstoryminled">
+                <img src="images/topminilead.jpg" class="img-res" alt="aa" >
+                <div class="width100percnt">
+                  <div class="tpstrytitile">
+                    <h2 class="headingtitle"><a href="#" title="">വ്യാപനം</a></h2>
+                    <span>5 mis ago</span>
+                  </div>
+                  <h3><a href="#" title="">ഉപദേശവും ബോ</a></h3>
+                </div>
+              </div>
+              <div class="topstoryminled">
+                <img src="images/topminilead.jpg" class="img-res" alt="aa" >
+                <div class="width100percnt">
+                  <div class="tpstrytitile">
+                    <h2 class="headingtitle"><a href="#" title="">ഡൊണാൾഡ് ട്രംപ്</a></h2>
+                    <span>5 mis ago</span>
+                  </div>
+                  <h3><a href="#" title="">ചൈനയുമായുള്ള മുഖാമുഖം ലഡാക്ക് </a></h3>
+                </div>
+              </div>
+              <div class="topstoryminled">
+                <img src="images/topminilead.jpg" class="img-res" alt="aa" >
+                <div class="width100percnt">
+                  <div class="tpstrytitile">
+                    <h2 class="headingtitle"><a href="#" title="">ഡൊണാൾഡ് ട്രംപ്</a></h2>
+                    <span>5 mis ago</span>
+                  </div>
+                  <h3><a href="#" title="">ചൈനയുമായുള്ള മുഖാമുഖം ലഡാക്ക് </a></h3>
+                </div>
+              </div>
+              <div class="topstoryminled">
+                <img src="images/topminilead.jpg" class="img-res" alt="aa" >
+                <div class="width100percnt">
+                  <div class="tpstrytitile">
+                    <h2 class="headingtitle"><a href="#" title="">ഡൊണാൾഡ് ട്രംപ്</a></h2>
+                    <span>5 mis ago</span>
+                  </div>
+                  <h3><a href="#" title="">ചൈനയുമായുള്ള മുഖാമുഖം ലഡാക്ക് </a></h3>
+                </div>
+              </div>
+            </div>
+            <div class="add300"><img src="images/add300X250.jpg" alt=""></div>
+          </div>
+          <!--end of top right-->
+        </div>
+      </section>
+      <!-- AD BLOCK START HERE -->
+      <div class="add300"><img src="images/banner1000X100.jpg" alt="" class="img-res"></div>
+      <!-- BOLLYWOOD BLOCK START HERE -->
+      <section class="bollywood-block">
+        <div class="container">
+          <div class="headtwo_red">
+            <h2><a href="#">World</a></h2>
+            <a class="h_moreg" href="#">Read More</a>
+          </div>
+          <div class="flex-row">
+            <div class="flex-col62">
+              <div class="lead">
+                <a href="#">
+                <img src="images/topimg.jpg" alt="" class="img-res">
+                </a>
+                <div class="lead-title-block">
+                  <div class="lead-tagbox">
+                    <h2 class="tag_inline"><a href="https://zeenews.india.com/world" target="_blank">ലോകം</a></h2>
+                  </div>
+                  <h2 class="lead-title"><a href="#">പ്രധാനമന്ത്രി മോദി ജൂൺ 26 ന് ‘ആത്മ നിർഭർ ഉത്തർപ്രദേശ് റോജർ അഭിയാൻ’ സമാരംഭിക്കും</a></h2>
+                </div>
+              </div>
+            </div>
+            <div class="flex-col38">
+              <div class="lead mgbt20">
+                <a href="#">
+                <img src="images/topimg.jpg" alt="" class="img-res">
+                </a>
+                <div class="lead-title-block">
+                  <div class="lead-tagbox">
+                    <h2 class="tag_inline"><a href="https://zeenews.india.com/world" target="_blank">ലോകം</a></h2>
+                  </div>
+                  <h2 class="medium-lead-title"><a href="#">ഓപ്പറേഷൻ സമുദ്ര സേതു: ബന്ദർ അബ്ബാസിൽ നിന്നും ഇന്ത്യക്കാരുമായി</a></h2>
+                </div>
+              </div>
+              <div class="flex-row">
+                <div class="flex-col50">
+                  <div class="edit-block">
+                    <a href="#"><img src="images/topimg.jpg" alt="" class="img-res"></a>
+                    <h4><a href="#">ബിൻ</a></h4>
+                    <h3><a href="#">ലഡാക്കിൽ സംയുക്ത സേനാഭ്യാസം നടത്</a></h3>
+                  </div>
+                </div>
+                <div class="flex-col50">
+                  <div class="edit-block">
+                    <a href="#"><img src="images/topimg.jpg" alt="" class="img-res"></a>
+                    <h4><a href="#">കോടിയാക്കി</a></h4>
+                    <h3><a href="#">ഓപ്പറേഷൻ സമുദ്ര സേതു: ബന്ദർ അബ്ബാസിൽി</a></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- APP BLOCK START HERE -->
+      <section class="app-bg">
+        <div class="container">
+          <div class="app_block">
+            <div class="app_con">
+              Stay Updated With Latest News<br>
+              <span class="anytime">ANYTIME</span> <span class="anywhere">ANYWHERE</span>
+              <p class="get_news">Get free news App and Enjoy Reading News!</p>
+            </div>
+            <div class="app_logo">
+              <div class="app_white">
+                <a href="#" target="_blank"><span class="bg-big_apple"></span>
+                <span class="icon_name">For Apple</span>
+                </a>
+                <a href="#" target="_blank"><span class="bg-big_android"></span>
+                <span class="icon_name">For Android</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- KERALA BLOCK START HERE -->  
+      <section class="blue-block">
+        <div class="container">
+          <div class="headtwo_red">
+            <h2><a href="#">Kerala</a></h2>
+            <a class="h_moreg" href="#">Read More</a>
+          </div>
+          <div class="flex-row flex-row-g20">
+            <div class="flex-col25 flex-col-g20">
+              <div class="gray-gradiant-block">
+                  <a href="https://zeenews.india.com/"><img src="images/trending-pic.webp" alt="" class="img-res"></a>
+                  <div class="gra-abs">
+                    <div class="orange"><a href="https://zeenews.india.com/hindi">ലോകം</a></div>
+                    <h2><a href="https://zeenews.india.com/">സ്വർണ്ണത്തിന്റെയും വെള്ളിയുടെയും വിലയിൽ വലിയ മാറ്റം, ജൂൺ 9 ലെ</a></h2>
+                  </div>
+              </div>
+            </div>
+            <div class="flex-col25 flex-col-g20">
+              <div class="pink-gradiant-block">
+                  <a href="https://zeenews.india.com/"><img src="images/trending-pic.webp" alt="" class="img-res"></a>
+                  <div class="gra-abs">
+                    <div class="orange"><a href="https://zeenews.india.com/hindi">ലോകം</a></div>
+                    <h2><a href="https://zeenews.india.com/">സ്വർണ്ണത്തിന്റെയും വെള്ളിയുടെയും വിലയിൽ വലിയ മാറ്റം, ജൂൺ 9 ലെ</a></h2>
+                  </div>
+              </div>
+            </div>
+            <div class="flex-col25 flex-col-g20">
+              <div class="blue-gradiant-block">
+                  <a href="https://zeenews.india.com/"><img src="images/trending-pic.webp" alt="" class="img-res"></a>
+                  <div class="gra-abs">
+                    <div class="orange"><a href="https://zeenews.india.com/hindi">ലോകം</a></div>
+                    <h2><a href="https://zeenews.india.com/">സ്വർണ്ണത്തിന്റെയും വെള്ളിയുടെയും വിലയിൽ വലിയ മാറ്റം, ജൂൺ 9 ലെ</a></h2>
+                  </div>
+              </div>
+            </div>
+            <div class="flex-col25 flex-col-g20">
+              <div class="orange-gradiant-block">
+                  <a href="https://zeenews.india.com/"><img src="images/trending-pic.webp" alt="" class="img-res"></a>
+                  <div class="gra-abs">
+                    <div class="orange"><a href="https://zeenews.india.com/hindi">ലോകം</a></div>
+                    <h2><a href="https://zeenews.india.com/">സ്വർണ്ണത്തിന്റെയും വെള്ളിയുടെയും വിലയിൽ വലിയ മാറ്റം, ജൂൺ 9 ലെ</a></h2>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- AD BLOCK START HERE -->
+      <div class="add300"><img src="images/banner1000X100.jpg" alt="" class="img-res"></div>
+      <!-- PHOTO BLOCK START HERE -->
+      <section>
+        1
+      </section>
+      <!-- REGIONAL BLOCK START HERE -->
+      <section class="regional-block">
+        <ul class="regional-tabs">
+          <li class="tab-link current" data-tab="tab-1">English</li>
+          <li class="tab-link" data-tab="tab-2">हिन्दी</li>
+          <li class="tab-link" data-tab="tab-3">मराठी</li>
+          <li class="tab-link" data-tab="tab-4">বাংলা</li>
+          <li class="tab-link" data-tab="tab-5">தமிழ்</li>
+          <li class="tab-link" data-tab="tab-6">ગુજરાતી</li>
+          <li class="tab-link" data-tab="tab-7">తెలుగు</li>
+          <li class="tab-link" data-tab="tab-8">ಕನ್ನಡ</li>
+        </ul>
+        <div class="container">
+          <div id="tab-1" class="tab-content current">
+            <div class="flex-row mgbt20">
+              <div class="flex-col50">
+                <div class="lead">
+                  <a href="#">
+                  <img src="images/topimg.jpg" alt="" class="img-res">
+                  </a>
+                  <div class="lead-title-block">
+                    <div class="lead-tag"><a href="https://zeenews.india.com/world" target="_blank">India</a>
+                    </div>
+                    <h2 class="lead-title"><a href="#">Sushant Singh Rajput suicide case: Police questions Netflix Director Aashish Singh, who earlier worked with YRF</a></h2>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-col50">
+                <div class="flex-row">
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Horoscope</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Malaika Arora's adorable birthday wish for beau Arjun Kapoor is full of 'sunshine' love!</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">मार्केट</a>
+                          </h4>
+                          <h3>
+                            <a href="#">ग्राहकों ने चीनी सामान से किया तौबा, पढ़ें सबसे बड़ी थोक मार्केट की ग्राउंड रिपोर्ट</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">देश</a>
+                          </h4>
+                          <h3>
+                            <a href="#">7 साल की बच्ची ने अपने इस कारनामे से जीता देश का दिल, हर कोई कर रहा तारीफ</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">बैंक</a>
+                          </h4>
+                          <h3>
+                            <a href="#">अब RBI की निगरानी में आएंगे सभी को-ऑपरेटिव बैंक, कैबिनेट ने दी मंजूरी</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">रणनीति</a>
+                          </h4>
+                          <h3>
+                            <a href="#">जब सचिन को आउट करने के लिए नासिर हुसैन ने अपनाई थी ये रणनीति, खुद किया खुलासा</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">चीन</a>
+                          </h4>
+                          <h3>
+                            <a href="#">गलवान की नई सैटेलाइट तस्वीरें, झड़प वाली जगह पर चीन ने किया निर्माण</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row read"><a href="#">Read More</a></div>
+          </div>
+          <div id="tab-2" class="tab-content">
+            <div class="flex-row mgbt20">
+              <div class="flex-col50">
+                <div class="lead">
+                  <a href="#">
+                  <img src="images/topimg.jpg" alt="" class="img-res">
+                  </a>
+                  <div class="lead-title-block">
+                    <div class="lead-tag"><a href="https://zeenews.india.com/world" target="_blank">दुनिया</a>
+                    </div>
+                    <h2 class="lead-title"><a href="#">भारत-चीन सीमा विवाद के बीच सामने आईं पेंगोंग इलाके की तस्वीरें, देखें यहां कैसे हैं हालात</a></h2>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-col50">
+                <div class="flex-row">
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">धर्म/राशिफल</a>
+                          </h4>
+                          <h3>
+                            <a href="#">दिल्ली में कोरोना मरीजों का आंकड़ा 70 हजार के पार, होम आइसोलेशन में इतने हजार मरीज</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">मार्केट</a>
+                          </h4>
+                          <h3>
+                            <a href="#">ग्राहकों ने चीनी सामान से किया तौबा, पढ़ें सबसे बड़ी थोक मार्केट की ग्राउंड रिपोर्ट</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">देश</a>
+                          </h4>
+                          <h3>
+                            <a href="#">7 साल की बच्ची ने अपने इस कारनामे से जीता देश का दिल, हर कोई कर रहा तारीफ</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">बैंक</a>
+                          </h4>
+                          <h3>
+                            <a href="#">अब RBI की निगरानी में आएंगे सभी को-ऑपरेटिव बैंक, कैबिनेट ने दी मंजूरी</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">रणनीति</a>
+                          </h4>
+                          <h3>
+                            <a href="#">जब सचिन को आउट करने के लिए नासिर हुसैन ने अपनाई थी ये रणनीति, खुद किया खुलासा</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">चीन</a>
+                          </h4>
+                          <h3>
+                            <a href="#">गलवान की नई सैटेलाइट तस्वीरें, झड़प वाली जगह पर चीन ने किया निर्माण</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row read"><a href="#">अधिक पढ़ें</a></div>
+          </div>
+          <div id="tab-3" class="tab-content">
+            <div class="flex-row mgbt20">
+              <div class="flex-col50">
+                <div class="lead">
+                  <a href="#">
+                  <img src="images/topimg.jpg" alt="" class="img-res">
+                  </a>
+                  <div class="lead-title-block">
+                    <div class="lead-tag"><a href="https://zeenews.india.com/world" target="_blank">तब्बल एवढ्या</a>
+                    </div>
+                    <h2 class="lead-title"><a href="#">राज्यासाठी दिलासादायक बातमी! एकाच दिवशी तब्बल एवढ्या कोरोनाग्रस्तांना डिस्चार्ज</a></h2>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-col50">
+                <div class="flex-row">
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Trump</a>
+                          </h4>
+                          <h3>
+                            <a href="#">चीनला उत्तर देण्यासाठी भारताने लडाखमध्ये तैनात केला 'भीष्म' टँक</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">China</a>
+                          </h4>
+                          <h3>
+                            <a href="#">शरद पोंक्षे राष्ट्रवादीच्या व्यासपीठावर येणं क्लेशदायी, पण...- जितेंद्र आव्हाड</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Weather</a>
+                          </h4>
+                          <h3>
+                            <a href="#">'पडळकरांच्या तोंडाला काळं फासणार', राष्ट्रवादी काँग्रेसचा आंदोलनाचा इशारा</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">गुन्ह्यांची नोंद</a>
+                          </h4>
+                          <h3>
+                            <a href="#">भारतातील कोणीतरी शुक्रवारी युरोपमधील सर्वात मोठी १३० मिलियन्स युरोची लॉटरी जिंकू शकतो</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">कोकणाला</a>
+                          </h4>
+                          <h3>
+                            <a href="#">चक्रीवादळग्रस्त कोकणाला दिलासा, अधिकच्या मदतीचा मार्ग मोकळा</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">टीका</a>
+                          </h4>
+                          <h3>
+                            <a href="#">पडळकर यांनी पवारांवर केलेली टीका अयोग्य : प्रवीण दरेकर</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row read"><a href="#">पुढे वाचा</a></div>
+          </div>
+          <div id="tab-4" class="tab-content">
+            <div class="flex-row mgbt20">
+              <div class="flex-col50">
+                <div class="lead">
+                  <a href="#">
+                  <img src="images/topimg.jpg" alt="" class="img-res">
+                  </a>
+                  <div class="lead-title-block">
+                    <div class="lead-tag"><a href="https://zeenews.india.com/world" target="_blank">World</a>
+                    </div>
+                    <h2 class="lead-title"><a href="#">Indian Railways deploys 960 COVID care coaches in Delhi, UP, MP, Andhra, Telangana and Noida.</a></h2>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-col50">
+                <div class="flex-row">
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Trump</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Blood plasma from recovered COVID-19 patients safe for treatment: Study</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">China</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Key protein discovered in heart to reduce damage from attack, improve survival rates</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Weather</a>
+                          </h4>
+                          <h3>
+                            <a href="#">A sneak peek into Sunny Leone's life in Los Angeles 14</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Narendra Modi</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Suspended CSK team doctor issues apology for tweet</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Cricket</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Transitioning towards new normal: Socio Story to organise session</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">India</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Encounter breaks out in Shopian, security forces trap at least 2 terrorists</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row read"><a href="#">আরও পড়ুন</a></div>
+          </div>
+          <div id="tab-5" class="tab-content">
+            <div class="flex-row mgbt20">
+              <div class="flex-col50">
+                <div class="lead">
+                  <a href="#">
+                  <img src="images/topimg.jpg" alt="" class="img-res">
+                  </a>
+                  <div class="lead-title-block">
+                    <div class="lead-tag"><a href="https://zeenews.india.com/world" target="_blank">World</a>
+                    </div>
+                    <h2 class="lead-title"><a href="#">Indian Railways deploys 960 COVID care coaches in Delhi, UP, MP, Andhra, Telangana and Noida.</a></h2>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-col50">
+                <div class="flex-row">
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Trump</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Blood plasma from recovered COVID-19 patients safe for treatment: Study</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">China</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Key protein discovered in heart to reduce damage from attack, improve survival rates</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Weather</a>
+                          </h4>
+                          <h3>
+                            <a href="#">A sneak peek into Sunny Leone's life in Los Angeles 14</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Narendra Modi</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Suspended CSK team doctor issues apology for tweet</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Cricket</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Transitioning towards new normal: Socio Story to organise session</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">India</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Encounter breaks out in Shopian, security forces trap at least 2 terrorists</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row read"><a href="#">மேலும் வாசிக்க</a></div>
+          </div>
+          <div id="tab-6" class="tab-content">
+            <div class="flex-row mgbt20">
+              <div class="flex-col50">
+                <div class="lead">
+                  <a href="#">
+                  <img src="images/topimg.jpg" alt="" class="img-res">
+                  </a>
+                  <div class="lead-title-block">
+                    <div class="lead-tag"><a href="https://zeenews.india.com/world" target="_blank">ગૃહ રાજ્ય</a>
+                    </div>
+                    <h2 class="lead-title"><a href="#">રથયાત્રા પર વિવાદ થતા ગૃહ રાજ્ય મંત્રી પ્રદીપસિંહ જાડેજાનું નિવેદન, જાણો શું કહ્યું.</a></h2>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-col50">
+                <div class="flex-row">
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">ફેલાવનારા</a>
+                          </h4>
+                          <h3>
+                            <a href="#">કોરોનિલ દવા વિવાદઃ બાબા રામદેવનું ટ્વીટ, કહ્યુ- નફરત ફેલાવનારા માટે નિરાશાના સમાચાર </a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">China</a>
+                          </h4>
+                          <h3>
+                            <a href="#">વિવાદ: હિદુજા પરિવારમાં એક કાગળ મુદ્દે વિવાદ, 83 હજાર કરોડ રૂપિયા છે પત્રની કિંમત</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Weather</a>
+                          </h4>
+                          <h3>
+                            <a href="#">A sneak peek into Sunny Leone's life in Los Angeles 14</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Narendra Modi</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Suspended CSK team doctor issues apology for tweet</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Cricket</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Transitioning towards new normal: Socio Story to organise session</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">India</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Encounter breaks out in Shopian, security forces trap at least 2 terrorists</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row read"><a href="#">વધુ વાંચો</a></div>
+          </div>
+          <div id="tab-7" class="tab-content">
+            <div class="flex-row mgbt20">
+              <div class="flex-col50">
+                <div class="lead">
+                  <a href="#">
+                  <img src="images/topimg.jpg" alt="" class="img-res">
+                  </a>
+                  <div class="lead-title-block">
+                    <div class="lead-tag"><a href="https://zeenews.india.com/world" target="_blank">దాటేసిన</a>
+                    </div>
+                    <h2 class="lead-title"><a href="#">భారత్‌లో తొలిసారి.. పెట్రోల్‌ను దాటేసిన డీజిల్ ధర</a></h2>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-col50">
+                <div class="flex-row">
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">ముందే</a>
+                          </h4>
+                          <h3>
+                            <a href="#">ఆఫీసు ముందే రైతన్న ఆత్మహత్య.. సూసైడ్ నోట్‌లో ఎమ్మార్వో, వీఆర్వో పేర్లు</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">ఫ్రాంచైజీ</a>
+                          </h4>
+                          <h3>
+                            <a href="#">అమర జవాన్లపై ట్వీట్.. టీమ్ డాక్టర్‌పై చెన్నై ఫ్రాంచైజీ వేటు</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Weather</a>
+                          </h4>
+                          <h3>
+                            <a href="#">A sneak peek into Sunny Leone's life in Los Angeles 14</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Narendra Modi</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Suspended CSK team doctor issues apology for tweet</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Cricket</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Transitioning towards new normal: Socio Story to organise session</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">India</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Encounter breaks out in Shopian, security forces trap at least 2 terrorists</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row read"><a href="#">ఇంకా చదవండి</a></div>
+          </div>
+          <div id="tab-8" class="tab-content">
+            <div class="flex-row mgbt20">
+              <div class="flex-col50">
+                <div class="lead">
+                  <a href="#">
+                  <img src="images/topimg.jpg" alt="" class="img-res">
+                  </a>
+                  <div class="lead-title-block">
+                    <div class="lead-tag"><a href="https://zeenews.india.com/world" target="_blank">World</a>
+                    </div>
+                    <h2 class="lead-title"><a href="#">Indian Railways deploys 960 COVID care coaches in Delhi, UP, MP, Andhra, Telangana and Noida.</a></h2>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-col50">
+                <div class="flex-row">
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Trump</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Blood plasma from recovered COVID-19 patients safe for treatment: Study</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">China</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Key protein discovered in heart to reduce damage from attack, improve survival rates</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Weather</a>
+                          </h4>
+                          <h3>
+                            <a href="#">A sneak peek into Sunny Leone's life in Los Angeles 14</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex-col50">
+                    <ul class="mini-story-block">
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Narendra Modi</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Suspended CSK team doctor issues apology for tweet</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">Cricket</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Transitioning towards new normal: Socio Story to organise session</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-story">
+                          <h4>
+                            <a href="#">India</a>
+                          </h4>
+                          <h3>
+                            <a href="#">Encounter breaks out in Shopian, security forces trap at least 2 terrorists</a>
+                          </h3>
+                        </div>
+                        <div class="thumbnail">
+                          <a href="#">
+                          <img src="images/thumb.webp" alt="" class="img-res">
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row read"><a href="#">ಮತ್ತಷ್ಟು ಓದು</a></div>
+          </div>
+        </div>
+        <!-- container -->      
+      </section>
+    </div>
+    <!--WHITE CONTAINER CLOSE HERE -->
+    <!-- CSS START HERE -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/custom-desktop.css">
+    <!-- JS START HERE -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/custom-desktop.js"></script>
+  </body>
+</html>

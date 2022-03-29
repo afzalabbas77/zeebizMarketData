@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://cdn.zeebiz.com/html/images/zeebizlogo_favico_32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description"
+      content="Business News: Zee Business provides the latest business news such as Indian stock market news and Updates, sensex live news & nifty news. Check out the personal finance news from the world of business including BSE, Forex, IPO, stocks, mutual funds to manage your finances."/>
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;800&display=swap" rel="stylesheet">
+    <title>Market Data</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".searchicon").click(function(){
+          $(".search").slideToggle();
+          
+        })
+
+      })
+      // Selects clicked tab-nav
+  // Selects current content tab
+  // Selects previous active tab
+  // Selects previous content tab
+  // Removes classes of previous tabs
+  // Adds classes for clicked tab
+  function changeTab (element) {
+    var currentTabNav = $(element).closest('.tab-nav');
+    var currentContentTab = $('div[data-tab="'+ element.children('a').attr('href') +'"]');
+    var previousTab = currentTabNav.find('.tab-nav__item.active');
+    var previousContentTab = $('div[data-tab="' + previousTab.children('a').attr('href') + '"]');
+    previousTab.removeClass('active');
+    previousContentTab.removeClass('active');
+    element.addClass('active');
+    currentContentTab.addClass('active');
+  }
+
+  // Set the slider for the active tabs
+  // animate parameter defines whether the slider should have an animation or not
+  function updateBorderBottom (animate) {
+    $('.tab-nav__item.active a').each(function (index, element) {
+        var activeTab = $(element);
+        var bottomBorder = activeTab.closest('.tab-nav').find('.bottom-border');
+        var styles = {
+          top: (activeTab.position().top + 24),
+          width: activeTab.width(),
+          left: activeTab.position().left,
+          transition: animate ? 'all 0.1s ease' : 'none'
+        }
+        bottomBorder.css(styles);
+    });
+  }
+
+  // Change tab and content tab whenever a tab is clicked
+  $('.tab-nav__item a').click(function (e) {
+    e.preventDefault()
+    var element = $(e.target.parentElement);
+    changeTab(element);
+    updateBorderBottom(true);
+  });
+
+  // Updates slider as the screen resizes
+  $(window).resize(function () {
+    updateBorderBottom(false);
+  });
+
+  // Set the slider for the active tabs
+  updateBorderBottom(false);
+      </script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+https://api.zeenews.com/markets/v2/advanced_declined.json
+https://api.zeenews.com/markets/v2/top-gainer-value-wise.json
+https://api.zeenews.com/markets/v2/top-losser.json
+https://api.zeenews.com/markets/v2/top-gainer.json
+https://api.zeenews.com/markets/v2/top-gainer-volume-wise.json
+https://api.zeenews.com/markets/v2/stock-ticker.json (edited) 
