@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/zeebizMarketData/static/css/main.e5e5eb7c.chunk.css",
+    "main.js": "/zeebizMarketData/static/js/main.0e31a695.chunk.js",
+    "main.js.map": "/zeebizMarketData/static/js/main.0e31a695.chunk.js.map",
+    "runtime-main.js": "/zeebizMarketData/static/js/runtime-main.55b886e3.js",
+    "runtime-main.js.map": "/zeebizMarketData/static/js/runtime-main.55b886e3.js.map",
+    "static/css/2.591db2b6.chunk.css": "/zeebizMarketData/static/css/2.591db2b6.chunk.css",
+    "static/js/2.464dbcc7.chunk.js": "/zeebizMarketData/static/js/2.464dbcc7.chunk.js",
+    "static/js/2.464dbcc7.chunk.js.map": "/zeebizMarketData/static/js/2.464dbcc7.chunk.js.map",
+    "static/js/3.68be96e6.chunk.js": "/zeebizMarketData/static/js/3.68be96e6.chunk.js",
+    "static/js/3.68be96e6.chunk.js.map": "/zeebizMarketData/static/js/3.68be96e6.chunk.js.map",
+    "index.html": "/zeebizMarketData/index.html",
+    "static/css/2.591db2b6.chunk.css.map": "/zeebizMarketData/static/css/2.591db2b6.chunk.css.map",
+    "static/css/main.e5e5eb7c.chunk.css.map": "/zeebizMarketData/static/css/main.e5e5eb7c.chunk.css.map",
+    "static/js/2.464dbcc7.chunk.js.LICENSE.txt": "/zeebizMarketData/static/js/2.464dbcc7.chunk.js.LICENSE.txt",
+    "static/media/3dotblack.ff967e03.svg": "/zeebizMarketData/static/media/3dotblack.ff967e03.svg",
+    "static/media/index.css": "/zeebizMarketData/static/media/whitearrowvid.7d53231e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.55b886e3.js",
+    "static/css/2.591db2b6.chunk.css",
+    "static/js/2.464dbcc7.chunk.js",
+    "static/css/main.e5e5eb7c.chunk.css",
+    "static/js/main.0e31a695.chunk.js"
+  ]
+}
