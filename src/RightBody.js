@@ -11,7 +11,7 @@ function RightBody(){
         <h2 className="heading mrgnbtm15px">Most Read</h2>
         {
                     /*{ Sdata.filter((val, ind) => (ind < 6)).map((val, ind) => { }*/
-                    NewsData.filter((val, ind)=>(ind<2)).map((val, ind) => {
+                    NewsData.filter((val, ind) => (ind < 2)).map((val, ind) => {
                      return <Newsfeed key={val.Id}  imgsrc={val.imgsrc} title={val.title} para={val.para} linktext={val.linktext} />
                             })
                      }
